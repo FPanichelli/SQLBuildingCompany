@@ -1,17 +1,18 @@
 package domain.interfaces;
 
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.List;
 
 public interface IBaseDao<T> {
 
     T getById(int i) throws SQLException;
 
-    void save(T t) throws SQLException;
+    void insert(T t) throws SQLException;
 
-    void update(T t, String[] params);
+    void update(T t, String[] params) throws SQLFeatureNotSupportedException;
 
-    void delete(T t);
+    //void delete(int t) throws SQLException;
 
     List<T> selectAll() throws SQLException;
 }

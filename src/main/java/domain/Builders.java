@@ -1,11 +1,20 @@
 package domain;
 
-public class Builders {
+
+import domain.interfaces.IBuildersDao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public class Builders implements IBuildersDao {
 
     private int id;
     private String firstName;
     private String lastName;
     private int constructionCrewId;
+
+    public Builders() {
+    }
 
     public Builders(int id, String firstName, String lastName, int constructionCrewId) {
         this.id = id;
@@ -45,4 +54,45 @@ public class Builders {
     public void setConstructionCrewId(int constructionCrewId) {
         this.constructionCrewId = constructionCrewId;
     }
+
+    @Override
+    public String toString() {
+        return "Builders{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", constructionCrewId=" + constructionCrewId +
+                '}';
+    }
+
+    @Override
+    public Builders getById(int i) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void update(Builders builders, String[] params) {
+
+    }
+
+    @Override
+    public void delete(int builders) throws SQLException {
+
+    }
+
+    @Override
+    public void update(Builders builderUpdate) throws SQLException {
+
+    }
+
+    @Override
+    public void insert(Builders builderInsert) throws SQLException {
+
+    }
+
+    @Override
+    public List<Builders> selectAll() throws SQLException {
+        return null;
+    }
+
 }

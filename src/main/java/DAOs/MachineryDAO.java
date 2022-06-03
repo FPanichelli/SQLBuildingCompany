@@ -1,6 +1,5 @@
-package domain.DAOs;
+package DAOs;
 
-import domain.Buildings;
 import domain.Machinery;
 import domain.interfaces.IMachineryDao;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -15,7 +14,7 @@ public class MachineryDAO implements IMachineryDao {
         String query = "select * from machinery where id = ?";
         Connection connection = DriverManager.getConnection("jdbc:mysql://52.59.193.212:3306/Facundo_Panichelli", "root", "devintern" );
         try(PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setInt(1, 3);
+            ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
             return new Machinery(resultSet.getInt("id"), resultSet.getString("license_plate"), resultSet.getString("model"),
@@ -26,7 +25,7 @@ public class MachineryDAO implements IMachineryDao {
     }
 
     @Override
-    public void save(Machinery machinery) throws SQLException {
+    public void insert(Machinery machinery) throws SQLException {
 
     }
 
@@ -35,10 +34,6 @@ public class MachineryDAO implements IMachineryDao {
 
     }
 
-    @Override
-    public void delete(Machinery machinery) {
-
-    }
 
     @Override
     public List<Machinery> selectAll() throws SQLException {

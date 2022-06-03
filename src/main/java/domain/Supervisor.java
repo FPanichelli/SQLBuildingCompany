@@ -14,6 +14,9 @@ public class Supervisor {
         this.clientId = clientId;
     }
 
+    public Supervisor() {
+    }
+
     public int getId() {
         return id;
     }
@@ -44,5 +47,15 @@ public class Supervisor {
 
     public void setClientId(int clientId) {
         this.clientId = clientId;
+    }
+
+    @Override
+    public String toString() {
+        return "Supervisor{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", clientId=" + clientId +
+                '}';
     }
 }

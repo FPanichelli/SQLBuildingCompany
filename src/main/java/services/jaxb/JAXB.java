@@ -1,4 +1,4 @@
-package services;
+package services.jaxb;
 
 import domain.Machinery;
 import jakarta.xml.bind.JAXBContext;

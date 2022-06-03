@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Machinery id="0">
-    <operatorId>0</operatorId>
+<Machinery id="5">
+    <plate>LTA-222</plate>
+    <model>CAT W2</model>
+    <operatorId>2</operatorId>
+    <type>Bulldozer</type>
 </Machinery>

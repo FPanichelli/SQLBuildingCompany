@@ -1,6 +1,11 @@
 package domain;
 
-public class Architect {
+import domain.interfaces.IArchitectDao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public class Architect implements IArchitectDao {
 
     private int id;
     private String firstName;
@@ -18,6 +23,11 @@ public class Architect {
         this.buildingsConstructionLotId = buildingsConstructionLotId;
         this.buildingsProjectId = buildingsProjectId;
         this.buildingsSupervisorId = buildingsSupervisorId;
+    }
+
+
+    public Architect(int id, String first_name, String last_name, int buildings_id) {
+
     }
 
     public int getId() {
@@ -74,5 +84,39 @@ public class Architect {
 
     public void setBuildingsSupervisorId(int buildingsSupervisorId) {
         this.buildingsSupervisorId = buildingsSupervisorId;
+    }
+
+    @Override
+    public IArchitectDao getById(int i) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void insert(IArchitectDao iArchitectDao) throws SQLException {
+
+    }
+
+    @Override
+    public void update(IArchitectDao iArchitectDao, String[] params) {
+
+    }
+
+
+    @Override
+    public List<IArchitectDao> selectAll() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Architect{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", buildingsId=" + buildingsId +
+                ", buildingsConstructionLotId=" + buildingsConstructionLotId +
+                ", buildingsProjectId=" + buildingsProjectId +
+                ", buildingsSupervisorId=" + buildingsSupervisorId +
+                '}';
     }
 }

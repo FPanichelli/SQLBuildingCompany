@@ -1,6 +1,11 @@
 package domain;
 
-public class Client {
+import domain.interfaces.IClientDao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public class Client implements IClientDao {
 
     private int id;
     private String firstName;
@@ -74,5 +79,25 @@ public class Client {
 
     public void setSupervisorId(int supervisorId) {
         this.supervisorId = supervisorId;
+    }
+
+    @Override
+    public Client getById(int i) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void insert(Client client) throws SQLException {
+
+    }
+
+    @Override
+    public void update(Client client, String[] params) {
+
+    }
+
+    @Override
+    public List<Client> selectAll() throws SQLException {
+        return null;
     }
 }
