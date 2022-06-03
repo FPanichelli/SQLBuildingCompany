@@ -31,7 +31,7 @@ public class ConnectionPool {
             statement = connection.createStatement();
             resultSet = statement.executeQuery("select * from client");
             while (resultSet.next()) {
-                System.out.println("\n"+"Client id: " + resultSet.getInt("id"));
+                System.out.println("\n" + "Client id: " + resultSet.getInt("id"));
                 System.out.println("First Name: " + resultSet.getString("first_name"));
                 System.out.println("Last Name: " + resultSet.getString("last_name"));
                 System.out.println("Phone Number: " + resultSet.getString("phone_number"));

@@ -14,12 +14,12 @@ public class JSON {
     private static Logger LOGGER = LogManager.getLogger(JSON.class);
     private static ObjectMapper om = new ObjectMapper();
     private static Supervisor supervisor = new Supervisor(5, "Craig", "Pelton", 5);
-    private static Supervisor supervisor2 = new Supervisor(6,"Ben", "Chang", 6);
+    private static Supervisor supervisor2 = new Supervisor(6, "Ben", "Chang", 6);
 
-    public void setSupervisor(){
-        try{
+    public void setSupervisor() {
+        try {
             om.writeValue(new File("src/main/resources/supervisor.json"), supervisor);
-        }catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -30,7 +30,7 @@ public class JSON {
         try {
             List<Supervisor> supervisors = om.readValue(file, type);
             supervisors.forEach(supervisor -> LOGGER.info(supervisor));
-        }catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

@@ -27,6 +27,7 @@ public class Machinery {
     public int getId() {
         return id;
     }
+
     @XmlAttribute(name = "id")
     public void setId(int id) {
         this.id = id;
@@ -35,6 +36,7 @@ public class Machinery {
     public String getLicensePlate() {
         return licensePlate;
     }
+
     @XmlElement(name = "plate")
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
@@ -43,6 +45,7 @@ public class Machinery {
     public String getModel() {
         return model;
     }
+
     @XmlElement(name = "model")
     public void setModel(String model) {
         this.model = model;
@@ -51,6 +54,7 @@ public class Machinery {
     public String getType() {
         return type;
     }
+
     @XmlElement(name = "type")
     public void setType(String type) {
         this.type = type;

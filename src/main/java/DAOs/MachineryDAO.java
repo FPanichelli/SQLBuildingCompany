@@ -12,14 +12,14 @@ public class MachineryDAO implements IMachineryDao {
     @Override
     public Machinery getById(int id) throws SQLException {
         String query = "select * from machinery where id = ?";
-        Connection connection = DriverManager.getConnection("jdbc:mysql://52.59.193.212:3306/Facundo_Panichelli", "root", "devintern" );
-        try(PreparedStatement ps = connection.prepareStatement(query)) {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://52.59.193.212:3306/Facundo_Panichelli", "root", "devintern");
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
             return new Machinery(resultSet.getInt("id"), resultSet.getString("license_plate"), resultSet.getString("model"),
                     resultSet.getString("type"), resultSet.getInt("operators_id"));
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new SQLException();
         }
     }

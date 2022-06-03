@@ -101,7 +101,7 @@ public class ServiceBuilders implements IServiceBuilders {
     @Override
     public void delete(int id) {
         IBuildersDao buildersDAO;
-        try{
+        try {
             Reader reader = Resources.getResourceAsReader(MYBATIS_CONFIG);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             SqlSession session = sqlSessionFactory.openSession();

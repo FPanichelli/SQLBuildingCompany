@@ -32,7 +32,7 @@ public class MyBatisRunner {
 
         builders.insert(new Builders(11, "Alejandro", "Pappuzzi", 2));
         LOGGER.info(builders.getById(11));
-        builders.update(11, new Builders(11,"Ricardo","Sape",2));
+        builders.update(11, new Builders(11, "Ricardo", "Sape", 2));
         LOGGER.info(builders.getById(11));
     }
 }
