@@ -38,7 +38,6 @@ public class Runner {
         LOGGER.info(architect.getById(choice));
 
         building.insert(new Buildings(5, "residential", 16,5,5,5 ));
-        building.update(5)
 
 
 

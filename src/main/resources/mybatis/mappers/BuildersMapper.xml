@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="domain.interfaces.IBuildersDao">
+    <resultMap id="BuildersResultMap" type="domain.Builders" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="first_name" property="firstName" />
+        <result column="last_name" property="lastName" />
+        <result column="construction_crew_id" property="constructionCrewId" />
+    </resultMap>
+    <select id="getById" parameterType="int" resultMap="BuildersResultMap">
+        <![CDATA[
+        select * from builders where id = ${id};
+        ]]>
+    </select>
+    <select id="selectAll" resultMap="BuildersResultMap">
+        <![CDATA[
+        select * from builders;
+        ]]>
+    </select>
+    <insert id="insert">
+        <![CDATA[
+        Insert into builders (id,first_name,last_name,construction_crew_id)
+        Values (${id},"${firstName}","${lastName}",${constructionCrewId});
+        ]]>
+    </insert>
+    <update id="update">
+        <![CDATA[
+        Update builders set first_name = "${firstName}", last_name = "${lastName}", construction_crew_id = ${constructionCrewId} where id = ${id};
+        ]]>
+    </update>
+    <delete id="delete">
+        <![CDATA[
+        Delete from builders where id = ${id};
+        ]]>
+    </delete>
+</mapper>
