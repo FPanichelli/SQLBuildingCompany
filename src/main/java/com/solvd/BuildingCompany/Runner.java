@@ -3,10 +3,13 @@ package com.solvd.BuildingCompany;
 import com.solvd.BuildingCompany.DAOs.ArchitectDAO;
 import com.solvd.BuildingCompany.DAOs.BuildersDAO;
 import com.solvd.BuildingCompany.DAOs.MachineryDAO;
+import com.solvd.BuildingCompany.DAOs.SupervisorDAO;
 import com.solvd.BuildingCompany.domain.Architect;
 import com.solvd.BuildingCompany.domain.Builders;
 import com.solvd.BuildingCompany.domain.Machinery;
+import com.solvd.BuildingCompany.domain.Supervisor;
 import com.solvd.BuildingCompany.services.jaxb.JAXB;
+import com.solvd.BuildingCompany.services.json.JSON;
 import com.solvd.BuildingCompany.utils.builders.ArchitectBuilder;
 import com.solvd.BuildingCompany.utils.builders.BuildersBuilder;
 import com.solvd.BuildingCompany.utils.exceptions.DAOException;
@@ -17,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.FileNotFoundException;
 import java.net.ConnectException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Runner {
@@ -26,8 +30,10 @@ public class Runner {
         ArchitectDAO architect = new ArchitectDAO();
         BuildersDAO builders = new BuildersDAO();
         MachineryDAO machinery = new MachineryDAO();
+        SupervisorDAO supervisor = new SupervisorDAO();
 
         JAXB jaxb = new JAXB();
+        JSON json = new JSON();
 
         LOGGER.info("Hello! And thanks for trusting in Safe Quick Lofting building company, for your building needs");
         LOGGER.info("What would you like to check?" + "\n"
@@ -141,6 +147,11 @@ public class Runner {
                 break;
 
             case 3:
+                LOGGER.info("Selecting all rows on supervisor table and marshalling to JSON file");
+                List<Supervisor> sl = supervisor.selectAll();
+                json.marshallSupervisor(sl);
+                LOGGER.info("Printing from JSON file:");
+                json.unmarshallSupervisor();
                 break;
 
             case 4:

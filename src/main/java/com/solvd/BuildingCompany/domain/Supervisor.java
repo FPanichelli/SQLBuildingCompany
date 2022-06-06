@@ -17,6 +17,9 @@ public class Supervisor {
     public Supervisor() {
     }
 
+    public Supervisor(String first_name, String last_name, Integer client_id) {
+    }
+
     public int getId() {
         return id;
     }
