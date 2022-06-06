@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Machinery id="5">
-    <plate>LTA-222</plate>
-    <model>CAT W2</model>
-    <operatorId>2</operatorId>
-    <type>Bulldozer</type>
-</Machinery>
+<machinery id="3">
+    <plate>Not a Vehicle</plate>
+    <model>Everdigm</model>
+    <operatorId>1</operatorId>
+    <type>Crane</type>
+</machinery>

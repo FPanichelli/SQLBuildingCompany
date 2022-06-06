@@ -2,11 +2,15 @@ package com.solvd.BuildingCompany.DAOs;
 
 import com.solvd.BuildingCompany.domain.Buildings;
 import com.solvd.BuildingCompany.DAOs.interfaces.IBuildingsDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.List;
 
 public class BuildingsDAO implements IBuildingsDao {
+
+    private static Logger LOGGER = LogManager.getLogger(BuildingsDAO.class);
 
     @Override
     public Buildings getById(int id) throws SQLException {
@@ -35,9 +39,9 @@ public class BuildingsDAO implements IBuildingsDao {
             ps.setObject(5, building.getProjectId());
             ps.setInt(6, building.getSupervisorId());
             ps.executeUpdate();
-            System.out.println("Building successfully added to DB server");
+            LOGGER.info("Building successfully added to DB server");
         } catch (SQLException e) {
-            System.out.println(e);
+            LOGGER.info(e);
         }
     }
 

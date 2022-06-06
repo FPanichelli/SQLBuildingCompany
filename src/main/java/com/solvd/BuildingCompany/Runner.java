@@ -2,14 +2,19 @@ package com.solvd.BuildingCompany;
 
 import com.solvd.BuildingCompany.DAOs.ArchitectDAO;
 import com.solvd.BuildingCompany.DAOs.BuildersDAO;
+import com.solvd.BuildingCompany.DAOs.MachineryDAO;
 import com.solvd.BuildingCompany.domain.Architect;
 import com.solvd.BuildingCompany.domain.Builders;
+import com.solvd.BuildingCompany.domain.Machinery;
+import com.solvd.BuildingCompany.services.jaxb.JAXB;
 import com.solvd.BuildingCompany.utils.builders.ArchitectBuilder;
 import com.solvd.BuildingCompany.utils.builders.BuildersBuilder;
 import com.solvd.BuildingCompany.utils.exceptions.DAOException;
+import jakarta.xml.bind.JAXBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.net.ConnectException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -17,9 +22,12 @@ import java.util.Scanner;
 public class Runner {
     private static Logger LOGGER = LogManager.getLogger(Runner.class);
 
-    public static void main(String[] args) throws DAOException, SQLException, ConnectException {
+    public static void main(String[] args) throws DAOException, SQLException, ConnectException, JAXBException, FileNotFoundException {
         ArchitectDAO architect = new ArchitectDAO();
         BuildersDAO builders = new BuildersDAO();
+        MachineryDAO machinery = new MachineryDAO();
+
+        JAXB jaxb = new JAXB();
 
         LOGGER.info("Hello! And thanks for trusting in Safe Quick Lofting building company, for your building needs");
         LOGGER.info("What would you like to check?" + "\n"
@@ -133,7 +141,15 @@ public class Runner {
             case 3:
                 break;
 
+            case 4:
+                LOGGER.info("Select Machinery id to marshall then unmarshall");
+                int machinery_id;
+                machinery_id = sc.nextInt();
+                Machinery m = machinery.getById(machinery_id);
+                jaxb.jaxbMarshall(m);
+                Machinery m2 = new Machinery();
+                jaxb.jaxbUnmarshall(m2);
+                break;
         }
-
     }
 }

@@ -16,15 +16,13 @@ public class JAXB {
 
     private static Logger LOGGER = LogManager.getLogger(JAXB.class);
 
-    //move to runner:
-    Machinery machine = new Machinery(5, "LTA-222", "CAT W2", "Bulldozer", 2);
-
     public Machinery jaxbMarshall(Machinery machine) throws JAXBException, FileNotFoundException {
         try {
             JAXBContext c = JAXBContext.newInstance(Machinery.class);
             Marshaller m = c.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(machine, new FileOutputStream("src/main/resources/JAXB.xml"));
+            LOGGER.info("Marshalling successful");
         } catch (JAXBException | FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -35,7 +33,8 @@ public class JAXB {
         try {
             JAXBContext context = JAXBContext.newInstance(Machinery.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            Machinery machine2 = (Machinery) unmarshaller.unmarshal(new File("src/main/resources/marshalled.xml"));
+            Machinery machine2 = (Machinery) unmarshaller.unmarshal(new File("src/main/resources/JAXB.xml"));
+            LOGGER.info("Unmarshalling file:");
             LOGGER.info(machine2);
         } catch (JAXBException exception) {
             exception.printStackTrace();

@@ -4,6 +4,7 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "machinery")
 public class Machinery {
 
     private int id;
@@ -14,6 +15,13 @@ public class Machinery {
 
     public Machinery(int id, String licensePlate, String model, String type, int operatorId) {
         this.id = id;
+        this.licensePlate = licensePlate;
+        this.model = model;
+        this.type = type;
+        this.operatorId = operatorId;
+    }
+
+    public Machinery(String licensePlate, String model, String type, int operatorId) {
         this.licensePlate = licensePlate;
         this.model = model;
         this.type = type;
