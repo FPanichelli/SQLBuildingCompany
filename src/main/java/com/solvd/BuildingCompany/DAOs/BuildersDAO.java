@@ -14,9 +14,7 @@ import com.solvd.BuildingCompany.utils.exceptions.DAOException;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.net.ConnectException;
 import java.sql.SQLException;
-import java.sql.SQLFeatureNotSupportedException;
 import java.util.ArrayList;
 import java.util.List;
 

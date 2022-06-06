@@ -1,6 +1,5 @@
 package com.solvd.BuildingCompany.utils.builders;
 
-import com.solvd.BuildingCompany.domain.Architect;
 import com.solvd.BuildingCompany.domain.Builders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

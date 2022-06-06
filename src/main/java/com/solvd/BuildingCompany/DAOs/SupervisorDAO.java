@@ -1,7 +1,6 @@
 package com.solvd.BuildingCompany.DAOs;
 
 import com.solvd.BuildingCompany.DAOs.interfaces.ISupervisorDao;
-import com.solvd.BuildingCompany.domain.Architect;
 import com.solvd.BuildingCompany.domain.Supervisor;
 import com.solvd.BuildingCompany.utils.exceptions.DAOException;
 

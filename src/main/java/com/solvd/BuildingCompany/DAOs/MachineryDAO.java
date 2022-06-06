@@ -11,7 +11,6 @@ import java.util.List;
 import com.solvd.BuildingCompany.domain.Machinery;
 import com.solvd.BuildingCompany.DAOs.interfaces.IMachineryDao;
 
-import static java.sql.DriverManager.getConnection;
 
 
 public class MachineryDAO extends AbstractConnectionDAO implements IMachineryDao {
