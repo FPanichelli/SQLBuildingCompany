@@ -77,12 +77,6 @@ public class Machinery {
 
     @Override
     public String toString() {
-        return "Machinery{" +
-                "id=" + id +
-                ", licensePlate='" + licensePlate + '\'' +
-                ", model='" + model + '\'' +
-                ", type='" + type + '\'' +
-                ", operatorId=" + operatorId +
-                '}';
+        return "Machinery{" + "id=" + id + ", licensePlate='" + licensePlate + '\'' + ", model='" + model + '\'' + ", type='" + type + '\'' + ", operatorId=" + operatorId + '}';
     }
 }

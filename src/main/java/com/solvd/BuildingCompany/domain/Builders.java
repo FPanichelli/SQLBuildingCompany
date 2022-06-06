@@ -57,12 +57,7 @@ public class Builders implements IBuildersDao {
 
     @Override
     public String toString() {
-        return "Builders{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", constructionCrewId=" + constructionCrewId +
-                '}';
+        return "Builders{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", constructionCrewId=" + constructionCrewId + '}';
     }
 
     @Override

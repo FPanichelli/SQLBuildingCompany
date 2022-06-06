@@ -57,11 +57,6 @@ public class Supervisor {
 
     @Override
     public String toString() {
-        return "Supervisor{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", clientId=" + clientId +
-                '}';
+        return "Supervisor{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", clientId=" + clientId + '}';
     }
 }

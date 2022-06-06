@@ -63,12 +63,7 @@ public class Architect {
 
     @Override
     public String toString() {
-        return "\n" + "Architect{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", buildingsId=" + buildingsId +
-                '}' + "\n";
+        return "\n" + "Architect{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", buildingsId=" + buildingsId + '}' + "\n";
     }
 }
 

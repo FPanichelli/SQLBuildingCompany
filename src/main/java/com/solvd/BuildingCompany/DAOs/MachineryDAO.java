@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import java.net.ConnectException;
 import java.sql.*;
 import java.util.List;
+
 import com.solvd.BuildingCompany.domain.Machinery;
 import com.solvd.BuildingCompany.DAOs.interfaces.IMachineryDao;
 
@@ -22,7 +23,7 @@ public class MachineryDAO extends AbstractConnectionDAO implements IMachineryDao
     private Machinery convert(ResultSet rs) throws SQLException {
         String licensePlate = rs.getString("license_plate");
         String model = rs.getString("model");
-        String type  = rs.getString("type");
+        String type = rs.getString("type");
         Integer operatorId = rs.getInt("operators_id");
         Machinery ar = new Machinery(licensePlate, model, type, operatorId);
         ar.setId(rs.getInt("id"));

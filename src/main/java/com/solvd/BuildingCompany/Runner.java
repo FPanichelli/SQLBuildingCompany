@@ -40,13 +40,13 @@ public class Runner {
                 + "1. Architects" + "\n"
                 + "2. Builders" + "\n"
                 + "3. Supervisors" + "\n"
-                + "4. Machinery" );
+                + "4. Machinery");
 
         Scanner sc = new Scanner(System.in);
         int choice;
         choice = sc.nextInt();
 
-        switch (choice){
+        switch (choice) {
             case 1:
                 LOGGER.info("What would you like to do with Architects?" + "\n"
                         + "1. Check an architect through their ID" + "\n"
@@ -58,7 +58,7 @@ public class Runner {
                 Scanner sc2 = new Scanner(System.in);
                 choice = sc2.nextInt();
 
-                switch (choice){
+                switch (choice) {
                     case 1:
                         int id;
                         LOGGER.info("Please provide architect ID:");
@@ -107,7 +107,7 @@ public class Runner {
                 Scanner sc3 = new Scanner(System.in);
                 choice = sc3.nextInt();
 
-                switch (choice){
+                switch (choice) {
 
                     case 1:
                         int id;

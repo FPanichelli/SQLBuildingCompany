@@ -67,13 +67,6 @@ public class Buildings {
 
     @Override
     public String toString() {
-        return "Buildings{" +
-                "id=" + id +
-                ", type='" + type + '\'' +
-                ", stories=" + stories +
-                ", constructionLotId=" + constructionLotId +
-                ", projectId=" + projectId +
-                ", supervisorId=" + supervisorId +
-                '}';
+        return "Buildings{" + "id=" + id + ", type='" + type + '\'' + ", stories=" + stories + ", constructionLotId=" + constructionLotId + ", projectId=" + projectId + ", supervisorId=" + supervisorId + '}';
     }
 }

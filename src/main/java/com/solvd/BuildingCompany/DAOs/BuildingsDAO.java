@@ -20,8 +20,7 @@ public class BuildingsDAO implements IBuildingsDao {
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
-            return new Buildings(resultSet.getInt("id"), resultSet.getString("type"), resultSet.getInt("stories"),
-                    resultSet.getInt("construction_lot_id"), resultSet.getInt("project_id"), resultSet.getInt("supervisor_id"));
+            return new Buildings(resultSet.getInt("id"), resultSet.getString("type"), resultSet.getInt("stories"), resultSet.getInt("construction_lot_id"), resultSet.getInt("project_id"), resultSet.getInt("supervisor_id"));
         } catch (SQLException e) {
             throw new SQLException();
         }

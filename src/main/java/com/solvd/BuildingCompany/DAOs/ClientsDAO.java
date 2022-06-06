@@ -15,9 +15,7 @@ public class ClientsDAO implements IClientDao {
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
-            return new Client(resultSet.getInt("id"), resultSet.getString("first_name"), resultSet.getString("last_name"),
-                    resultSet.getString("phone_number"), resultSet.getInt("payment_id"), resultSet.getInt("budget"),
-                    resultSet.getInt("supervisor_id"));
+            return new Client(resultSet.getInt("id"), resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("phone_number"), resultSet.getInt("payment_id"), resultSet.getInt("budget"), resultSet.getInt("supervisor_id"));
         } catch (SQLException e) {
             throw new SQLException();
         }
