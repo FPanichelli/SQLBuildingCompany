@@ -18,6 +18,9 @@ public class Supervisor {
     }
 
     public Supervisor(String first_name, String last_name, Integer client_id) {
+        this.firstName = first_name;
+        this.lastName = last_name;
+        this.clientId = client_id;
     }
 
     public int getId() {
