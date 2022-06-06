@@ -125,8 +125,10 @@ public class Runner {
                     case 4:
                         int id2;
                         BuildersBuilder b2 = new BuildersBuilder();
-                        LOGGER.info("We are experiencing issues regarding this feature");
-
+                        LOGGER.info("Please provide ID of architect to be updated:");
+                        id2 = sc3.nextInt();
+                        Builders bu2 = b2.build();
+                        builders.update(id2, bu2);
                         break;
 
                     case 5:

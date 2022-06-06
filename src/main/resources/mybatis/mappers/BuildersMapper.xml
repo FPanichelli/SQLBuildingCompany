@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.solvd.BuildingCompany.DAOs.interfaces.IBuildersDao">
     <resultMap id="BuildersResultMap" type="com.solvd.BuildingCompany.domain.Builders" autoMapping="false">
-        <id column="id" property="id"/>
+        <result column="id" property="id"/>
         <result column="first_name" property="firstName" />
         <result column="last_name" property="lastName" />
         <result column="construction_crew_id" property="constructionCrewId" />

@@ -62,20 +62,19 @@ public class BuildersDAO implements IBuildersDao {
 
     @Override
     public void update(int id, Builders builderUpdate) throws SQLException {
-        /*IBuildersDao buildersDAO;
+        IBuildersDao buildersDAO;
         try {
             Reader reader = Resources.getResourceAsReader(MYBATIS_CONFIG);
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             SqlSession session = sqlSessionFactory.openSession();
             buildersDAO = session.getMapper(IBuildersDao.class);
             builderUpdate.setId(id);
-            buildersDAO.update(builderUpdate);
+            buildersDAO.update(id, builderUpdate);
             session.commit();
-        } catch (IOException | SQLException | DAOException e) {
+        } catch (IOException | SQLException e) {
             LOGGER.info("Update statement failed" + e);
             throw new RuntimeException(e);
-        }*/
-        throw new SQLFeatureNotSupportedException("Unsupported");
+        }
     }
 
     @Override
